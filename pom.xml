@@ -14,24 +14,35 @@
     <description>Parent POM for Java projects</description>
 
     <properties>
-        <maven.compiler.release>25</maven.compiler.release>
+        <!-- Project Defaults  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Maven Plugin - Version -->
+        <checkstyle.plugin.version>3.6.0</checkstyle.plugin.version>
+        <jacoco.plugin.version>0.8.13</jacoco.plugin.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <maven.enforcer.plugin.version>3.6.1</maven.enforcer.plugin.version>
-        <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>3.5.4</maven.failsafe.plugin.version>
-        <lombok.version>1.18.42</lombok.version>
-        <commons.lang3.version>3.19.0</commons.lang3.version>
-        <commons.collections4.version>4.5.0</commons.collections4.version>
-        <slf4j.version>2.0.17</slf4j.version>
-        <junit.jupiter.version>5.13.4</junit.jupiter.version>
-        <spotless.plugin.version>3.0.0</spotless.plugin.version>
-        <palantir.java.format.version>2.74.0</palantir.java.format.version>
-        <checkstyle.plugin.version>3.6.0</checkstyle.plugin.version>
+        <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
         <spotbugs.plugin.version>4.9.6.0</spotbugs.plugin.version>
+        <spotless.plugin.version>3.0.0</spotless.plugin.version>
+
+        <!-- Maven Plugin - Support Dependencies - Version -->
+        <palantir.java.format.version>2.74.0</palantir.java.format.version>
         <spotbugs.annotations.version>4.9.6</spotbugs.annotations.version>
-        <jacoco.plugin.version>0.8.13</jacoco.plugin.version>
+
+        <!-- Maven Plugin Options - Compiler -->
+        <maven.compiler.release>25</maven.compiler.release>
+
+        <!-- Maven Plugin Options - JaCoCo -->
         <jacoco.min.coverage>0.60</jacoco.min.coverage>
+
+        <!-- Common Dependencies - Version -->
+        <commons.collections4.version>4.5.0</commons.collections4.version>
+        <commons.lang3.version>3.19.0</commons.lang3.version>
+        <junit.jupiter.version>5.13.4</junit.jupiter.version>
+        <lombok.version>1.18.42</lombok.version>
+        <slf4j.version>2.0.17</slf4j.version>
     </properties>
 
     <dependencyManagement>
@@ -78,9 +89,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -102,11 +116,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-annotations</artifactId>
-            <version>4.9.6</version>
         </dependency>
     </dependencies>
 
@@ -334,12 +343,12 @@
 
         <plugins>
             <plugin>
-                <groupId>com.diffplug.spotless</groupId>
-                <artifactId>spotless-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
