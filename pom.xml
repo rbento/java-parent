@@ -17,32 +17,31 @@
         <!-- Project Defaults  -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Maven Plugin - Version -->
+        <!-- Libraries -->
+        <commons.collections4.version>4.5.0</commons.collections4.version>
+        <commons.lang3.version>3.20.0</commons.lang3.version>
+        <junit.jupiter.version>6.0.3</junit.jupiter.version>
+        <lombok.version>1.18.44</lombok.version>
+        <slf4j.version>2.0.17</slf4j.version>
+
+        <!-- Maven Plugin -->
         <checkstyle.plugin.version>3.6.0</checkstyle.plugin.version>
         <jacoco.plugin.version>0.8.13</jacoco.plugin.version>
-        <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
-        <maven.enforcer.plugin.version>3.6.1</maven.enforcer.plugin.version>
-        <maven.failsafe.plugin.version>3.5.4</maven.failsafe.plugin.version>
-        <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
-        <spotbugs.plugin.version>4.9.6.0</spotbugs.plugin.version>
-        <spotless.plugin.version>3.0.0</spotless.plugin.version>
+        <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
+        <maven.enforcer.plugin.version>3.6.2</maven.enforcer.plugin.version>
+        <maven.failsafe.plugin.version>3.5.5</maven.failsafe.plugin.version>
+        <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
+        <spotbugs.plugin.version>4.9.8.2</spotbugs.plugin.version>
+        <spotless.plugin.version>3.4.0</spotless.plugin.version>
 
-        <!-- Maven Plugin - Support Dependencies - Version -->
-        <palantir.java.format.version>2.74.0</palantir.java.format.version>
-        <spotbugs.annotations.version>4.9.6</spotbugs.annotations.version>
+        <!-- Maven Plugin - Support -->
+        <palantir.java.format.version>2.89.0</palantir.java.format.version>
+        <spotbugs.annotations.version>4.9.8</spotbugs.annotations.version>
 
-        <!-- Maven Plugin Options - Compiler -->
+        <!-- Maven Plugin Options -->
         <maven.compiler.release>25</maven.compiler.release>
-
-        <!-- Maven Plugin Options - JaCoCo -->
         <jacoco.min.coverage>0.60</jacoco.min.coverage>
 
-        <!-- Common Dependencies - Version -->
-        <commons.collections4.version>4.5.0</commons.collections4.version>
-        <commons.lang3.version>3.19.0</commons.lang3.version>
-        <junit.jupiter.version>5.13.4</junit.jupiter.version>
-        <lombok.version>1.18.42</lombok.version>
-        <slf4j.version>2.0.17</slf4j.version>
     </properties>
 
     <dependencyManagement>
@@ -80,7 +79,7 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.spotbugs</groupId>
+                <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-annotations</artifactId>
                 <version>${spotbugs.annotations.version}</version>
             </dependency>
