@@ -41,6 +41,7 @@
 
         <!-- Maven Plugin Options -->
         <maven.compiler.release>25</maven.compiler.release>
+        <checkstyle.lineLength>120</checkstyle.lineLength>
         <jacoco.min.coverage>0.60</jacoco.min.coverage>
 
     </properties>
@@ -202,7 +203,8 @@
                     <version>${checkstyle.plugin.version}</version>
                     <configuration>
                         <suppressionsLocation>${pom.basedir}/checkstyle-suppressions.xml</suppressionsLocation>
-                        <propertyExpansion>checkstyle.lineLength=120</propertyExpansion>
+                        <configLocation>${pom.basedir}/checkstyle.xml</configLocation>
+                        <propertyExpansion>checkstyle.lineLength=${checkstyle.lineLength}</propertyExpansion>
                     </configuration>
                     <executions>
                         <execution>
