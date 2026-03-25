@@ -33,7 +33,7 @@ A shared **Maven parent project** that provides a consistent baseline for all Ja
 <parent>
   <groupId>com.example</groupId>
   <artifactId>java-parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </parent>
 ```
 
